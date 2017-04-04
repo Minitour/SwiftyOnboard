@@ -24,11 +24,11 @@ class StoryboardExampleViewController: UIViewController {
 
 extension StoryboardExampleViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource {
     
-    func swiftyOnboardNumberOfPages(swiftyOnboard: SwiftyOnboard) -> Int {
+    func swiftyOnboardNumberOfPages(_ swiftyOnboard: SwiftyOnboard) -> Int {
         return 3
     }
     
-    func swiftyOnboardPageForIndex(swiftyOnboard: SwiftyOnboard, index: Int) -> SwiftyOnboardPage? {
+    func swiftyOnboardPageForIndex(_ swiftyOnboard: SwiftyOnboard, index: Int) -> SwiftyOnboardPage? {
         let view = CustomPage.instanceFromNib() as? CustomPage
         view?.image.image = UIImage(named: "space\(index).png")
         if index == 0 {

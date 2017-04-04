@@ -8,19 +8,47 @@
 
 import UIKit
 
+public protocol SwiftyOnboardOverlayDelegate{
+    
+    func didClickContinue(_ onboardOverlay: SwiftyOnboardOverlay, button: UIButton)
+    
+    func didClickSkip(_ onboardOverlay: SwiftyOnboardOverlay, button: UIButton)
+    
+    func didClickSignin(_ onboardOverlay: SwiftyOnboardOverlay, button: UIButton)
+}
+
 open class SwiftyOnboardOverlay: UIView {
 
+    public var delegate: SwiftyOnboardOverlayDelegate?
+    
+
+    public var logoView: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
+    
     public var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
+        pageControl.isUserInteractionEnabled = false
         pageControl.currentPage = 0
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         return pageControl
     }()
     
+    public var signInButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Sign in", for: .normal)
+        button.contentHorizontalAlignment = .center
+        button.addTarget(self, action: #selector(didClickSignin(sender:)), for: .touchUpInside)
+        return button
+    }()
+    
     public var continueButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Continue", for: .normal)
+        button.setTitle("CONTINUE", for: .normal)
         button.contentHorizontalAlignment = .center
+        button.addTarget(self, action: #selector(didClickContinue(sender:)), for: .touchUpInside)
         return button
     }()
     
@@ -28,6 +56,7 @@ open class SwiftyOnboardOverlay: UIView {
         let button = UIButton(type: .system)
         button.setTitle("Skip", for: .normal)
         button.contentHorizontalAlignment = .right
+        button.addTarget(self, action: #selector(didClickSkip(sender:)), for: .touchUpInside)
         return button
     }()
     
@@ -70,26 +99,77 @@ open class SwiftyOnboardOverlay: UIView {
         pageControl.currentPage = index
     }
     
+    
+    private let buttonHeightRatio: CGFloat = 0.07
+    
+    open override func layoutSubviews() {
+        
+        let height = self.frame.size.height * buttonHeightRatio
+        continueButton.layer.cornerRadius = height/2
+        continueButton.layer.borderColor = UIColor.white.cgColor
+        continueButton.layer.borderWidth = 2
+//        signInButton.layer.cornerRadius = height/2
+//        signInButton.layer.borderColor = UIColor.white.cgColor
+//        signInButton.layer.borderWidth = 2
+    }
+    
+    
     func setUp() {
-        self.addSubview(pageControl)
+        addSubview(logoView)
+        logoView.translatesAutoresizingMaskIntoConstraints = false
+        logoView.topAnchor.constraint(equalTo: topAnchor, constant: 40).isActive = true
+        logoView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        logoView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        logoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05).isActive = true
+        
+        let resizableView = UIView()
+        resizableView.isUserInteractionEnabled = false
+        resizableView.isHidden = true
+        addSubview(resizableView)
+        resizableView.translatesAutoresizingMaskIntoConstraints = false
+        resizableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        resizableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        resizableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        resizableView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.7).isActive = true
+        
+        addSubview(pageControl)
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.heightAnchor.constraint(equalToConstant: 15).isActive = true
-        pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
-        pageControl.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
-        pageControl.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
+        pageControl.topAnchor.constraint(equalTo: resizableView.bottomAnchor, constant: 10).isActive = true
+        pageControl.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        pageControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         
-        self.addSubview(continueButton)
+        addSubview(continueButton)
         continueButton.translatesAutoresizingMaskIntoConstraints = false
-        continueButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        continueButton.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -20).isActive = true
-        continueButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
-        continueButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
+        continueButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: buttonHeightRatio).isActive = true
+        continueButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).isActive = true
+        continueButton.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 20).isActive = true
+        continueButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        self.addSubview(skipButton)
+        addSubview(signInButton)
+        signInButton.translatesAutoresizingMaskIntoConstraints = false
+        signInButton.topAnchor.constraint(equalTo: continueButton.bottomAnchor, constant: 10).isActive = true
+        signInButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        signInButton.widthAnchor.constraint(equalTo: continueButton.widthAnchor, multiplier: 1.0).isActive = true
+        signInButton.heightAnchor.constraint(equalTo: continueButton.heightAnchor, multiplier: 1.0).isActive = true
+        
+        
+        addSubview(skipButton)
         skipButton.translatesAutoresizingMaskIntoConstraints = false
         skipButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        skipButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 40).isActive = true
-        skipButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
-        skipButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        skipButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        skipButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
+    }
+    
+    func didClickContinue(sender: UIButton){
+        delegate?.didClickContinue(self, button: sender)
+    }
+    
+    func didClickSignin(sender: UIButton){
+        delegate?.didClickSignin(self, button: sender)
+    }
+    
+    func didClickSkip(sender: UIButton){
+        delegate?.didClickSkip(self, button: sender)
     }
 }

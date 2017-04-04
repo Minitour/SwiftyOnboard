@@ -52,12 +52,12 @@ class ViewController: UIViewController {
 
 extension ViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource {
     
-    func swiftyOnboardNumberOfPages(swiftyOnboard: SwiftyOnboard) -> Int {
+    func swiftyOnboardNumberOfPages(_ swiftyOnboard: SwiftyOnboard) -> Int {
         //Number of pages in the onboarding:
         return 3
     }
     
-    func swiftyOnboardPageForIndex(swiftyOnboard: SwiftyOnboard, index: Int) -> SwiftyOnboardPage? {
+    func swiftyOnboardPageForIndex(_ swiftyOnboard: SwiftyOnboard, index: Int) -> SwiftyOnboardPage? {
         let view = SwiftyOnboardPage()
         
         //Set the image on the page:

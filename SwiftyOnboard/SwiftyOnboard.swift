@@ -49,6 +49,7 @@ public protocol SwiftyOnboardDelegate: class {
 }
 
 public extension SwiftyOnboardDelegate {
+    func swiftyOnboard(_ swiftyOnboard: SwiftyOnboard, didClickContinue button: UIButton,atIndex index: Int,isLast: Bool){}
     func swiftyOnboard(_ swiftyOnboard: SwiftyOnboard, currentPage index: Int) {}
     func swiftyOnboard(_ swiftyOnboard: SwiftyOnboard, leftEdge position: Double) {}
     func swiftyOnboard(_ swiftyOnboard: SwiftyOnboard, tapped index: Int) {}
@@ -189,25 +190,12 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
         return currentPosition
     }
     
-    private func fadePageTransitions(containerView: UIScrollView, currentPage: Int)-> CGFloat{
+    private func fadePageTransitions(containerView: UIScrollView, currentPage: Int){
         //Shorter Solution:
         for (index,page) in pages.enumerated() {
             let alpha =  1 - abs(abs(containerView.contentOffset.x) - page.frame.width * CGFloat(index)) / page.frame.width
             page.alpha = alpha
-            return alpha
         }
-        return 0
-//        let diffFromCenter: CGFloat = abs(containerView.contentOffset.x - (CGFloat(currentPage)) * self.frame.size.width)
-//        let currentPageAlpha: CGFloat = 1.0 - diffFromCenter / self.frame.size.width
-//        let sidePagesAlpha: CGFloat = diffFromCenter / self.frame.size.width
-//        //NSLog(@"%f",currentPageAlpha);
-//        pages[currentPage].alpha = currentPageAlpha
-//        if currentPage > 0 {
-//            pages[currentPage - 1].alpha = sidePagesAlpha
-//        }
-//        if currentPage < pages.count - 1 {
-//            pages[currentPage + 1].alpha = sidePagesAlpha
-//        }
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -240,9 +228,9 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
         
         self.overlay?.currentPage(index: Int(round(currentPosition)))
         
-        var precent: CGFloat?
+
         if self.fadePages {
-            precent = 1 - fadePageTransitions(containerView: scrollView, currentPage: Int(getCurrentPosition()))
+            fadePageTransitions(containerView: scrollView, currentPage: Int(getCurrentPosition()))
         }
         
         self.delegate?.swiftyOnboard(self, leftEdge: currentPosition)
@@ -250,38 +238,18 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
             self.dataSource?.swiftyOnboardOverlayForPosition(self, overlay: overlayView, for: currentPosition)
         }
         
-//        if currentPage < pageCount - 1 {
-//            print(currentPage)
-//            if let startColor = dataSource?.swiftyOnboardBackgroundColorFor(self, atIndex: currentPage),
-//                let endColor = dataSource?.swiftyOnboardBackgroundColorFor(self, atIndex: currentPage+1){
-//                
-//                if let p = precent{
-//                    self.backgroundColor = colorFrom(start: startColor, end: endColor, precent: Float(p * 100))
-//                }
-//            }
-//        }
-        
         if let color = colorForPosition(CGFloat(currentPosition)) {
             self.backgroundColor = color
         }
         
     }
     
-    /**
-     public static int getColorOfDegradate(int colorStart, int colorEnd, int percent){
-     return Color.rgb(
-     getColorOfDegradateCalculation(Color.red(colorStart), Color.red(colorEnd), percent),
-     getColorOfDegradateCalculation(Color.green(colorStart), Color.green(colorEnd), percent),
-     getColorOfDegradateCalculation(Color.blue(colorStart), Color.blue(colorEnd), percent)
-     );
-     }
-     
-     private static int getColorOfDegradateCalculation(int colorStart, int colorEnd, int percent){
-     return ((Math.min(colorStart, colorEnd)*(100-percent)) + (Math.max(colorStart, colorEnd)*percent)) / 100;
-     }
- */
-    
-    func colorFrom(start color1: UIColor, end color2: UIColor, precent: Float)->UIColor{
+    private func colorFrom(start color1: UIColor, end color2: UIColor, precent: Float)->UIColor{
+        func cofd(_ color1: CGFloat,_ color2: CGFloat,_ precent: Float)-> Float{
+            let c1 = Float(color1)
+            let c2 = Float(color2)
+            return (c1 + ((c2 - c1) * precent))
+        }
         return UIColor(colorLiteralRed: cofd(color1.cgColor.components![0],
                                              color2.cgColor.components![0],
                                              precent),
@@ -295,11 +263,7 @@ public class SwiftyOnboard: UIView, UIScrollViewDelegate {
         
     }
     
-    func cofd(_ color1: CGFloat,_ color2: CGFloat,_ precent: Float)-> Float{
-        let c1 = Float(color1)
-        let c2 = Float(color2)
-        return (c1 + ((c2 - c1) * precent))
-    }
+    
     
     public func goToPage(index: Int, animated: Bool) {
         if index < self.pageCount {

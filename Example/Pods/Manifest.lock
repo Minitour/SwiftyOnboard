@@ -2,11 +2,20 @@ PODS:
   - SwiftyOnboard (1.1.1)
 
 DEPENDENCIES:
-  - SwiftyOnboard
+  - SwiftyOnboard (from `https://github.com/Minitour/SwiftyOnboard.git`)
+
+EXTERNAL SOURCES:
+  SwiftyOnboard:
+    :git: https://github.com/Minitour/SwiftyOnboard.git
+
+CHECKOUT OPTIONS:
+  SwiftyOnboard:
+    :commit: 1e353cedfa0af094e554c1a48e803f5184ad3d8f
+    :git: https://github.com/Minitour/SwiftyOnboard.git
 
 SPEC CHECKSUMS:
-  SwiftyOnboard: 33e088e8efabc844e4387942c259b53e5b428ec6
+  SwiftyOnboard: 49197992f870a1976eca8421136a43665b32ce6d
 
-PODFILE CHECKSUM: 79bb0b536df239d044c550ad3debbb51feb11053
+PODFILE CHECKSUM: 081c77fd3a548693f97068b884a711bafa5a80b3
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.rc.1

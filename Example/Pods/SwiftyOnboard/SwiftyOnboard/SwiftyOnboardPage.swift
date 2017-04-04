@@ -57,12 +57,25 @@ open class SwiftyOnboardPage: UIView {
     }
     
     func setUp() {
+        
+        let resizeableView = UIView()
+        resizeableView.backgroundColor = .clear
+        addSubview(resizeableView)
+        
+        resizeableView.translatesAutoresizingMaskIntoConstraints = false
+        resizeableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        resizeableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        resizeableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        resizeableView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.18).isActive = true
+        
         self.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        imageView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
-        imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
-        imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
+        //imageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
+        //imageView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
+        imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1.0).isActive = true
+        imageView.topAnchor.constraint(equalTo: resizeableView.bottomAnchor).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.4).isActive = true
         
         self.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -76,6 +89,6 @@ open class SwiftyOnboardPage: UIView {
         subTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
         subTitle.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
         subTitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 0).isActive = true
-        subTitle.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        //subTitle.heightAnchor.constraint(equalTo: title.heightAnchor).isActive = true
     }
 }

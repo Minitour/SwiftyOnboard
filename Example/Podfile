@@ -6,6 +6,6 @@ target 'SwiftyOnboardExample' do
   use_frameworks!
 
   # Pods for SwiftyOnboardExample
-pod 'SwiftyOnboard'
+pod 'SwiftyOnboard', :git => 'https://github.com/Minitour/SwiftyOnboard.git'
 
 end
