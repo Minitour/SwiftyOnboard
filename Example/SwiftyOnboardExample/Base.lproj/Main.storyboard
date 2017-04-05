@@ -26,38 +26,5 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Storyboard Example View Controller-->
-        <scene sceneID="Y2J-Ws-bIH">
-            <objects>
-                <viewController id="QRo-76-TiU" customClass="StoryboardExampleViewController" customModule="SwiftyOnboardExample" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7Hy-r2-Tx3"/>
-                        <viewControllerLayoutGuide type="bottom" id="nFs-we-mmD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cGA-E5-ymi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzD-cH-gbu" customClass="SwiftyOnboard" customModule="SwiftyOnboard">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="nFs-we-mmD" firstAttribute="top" secondItem="JzD-cH-gbu" secondAttribute="bottom" id="AqF-wd-BRt"/>
-                            <constraint firstItem="JzD-cH-gbu" firstAttribute="top" secondItem="cGA-E5-ymi" secondAttribute="top" id="Bh5-MI-pRB"/>
-                            <constraint firstItem="JzD-cH-gbu" firstAttribute="leading" secondItem="cGA-E5-ymi" secondAttribute="leading" id="VQD-OX-t3f"/>
-                            <constraint firstAttribute="trailing" secondItem="JzD-cH-gbu" secondAttribute="trailing" id="vsO-7h-2Rd"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="swiftyOnboard" destination="JzD-cH-gbu" id="Lb3-d7-YP1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DbW-gJ-GuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="932" y="38"/>
-        </scene>
     </scenes>
 </document>

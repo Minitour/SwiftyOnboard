@@ -16,11 +16,6 @@
 		693642291E89B7F6008808C2 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 693642261E89B7F6008808C2 /* Lato-Bold.ttf */; };
 		6936422A1E89B7F6008808C2 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 693642271E89B7F6008808C2 /* Lato-Regular.ttf */; };
 		6936422B1E89B7F6008808C2 /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 693642281E89B7F6008808C2 /* Lato-Heavy.ttf */; };
-		693642311E89C708008808C2 /* CustomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693642301E89C708008808C2 /* CustomPage.swift */; };
-		693642351E89CE6C008808C2 /* StoryboardExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693642341E89CE6C008808C2 /* StoryboardExample.swift */; };
-		6949C6041E89F63D0025E084 /* CustomPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6949C6031E89F63D0025E084 /* CustomPage.xib */; };
-		6949C6061E8A36530025E084 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6949C6051E8A36530025E084 /* CustomOverlay.swift */; };
-		6949C6081E8A39CB0025E084 /* CustomOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6949C6071E8A39CB0025E084 /* CustomOverlay.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +30,6 @@
 		693642261E89B7F6008808C2 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		693642271E89B7F6008808C2 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		693642281E89B7F6008808C2 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
-		693642301E89C708008808C2 /* CustomPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPage.swift; sourceTree = "<group>"; };
-		693642341E89CE6C008808C2 /* StoryboardExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardExample.swift; sourceTree = "<group>"; };
-		6949C6031E89F63D0025E084 /* CustomPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPage.xib; sourceTree = "<group>"; };
-		6949C6051E8A36530025E084 /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
-		6949C6071E8A39CB0025E084 /* CustomOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlay.xib; sourceTree = "<group>"; };
 		89A2285DF22A15377EBDB6B3 /* Pods_SwiftyOnboardExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyOnboardExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08F8182F55DC729E6747882 /* Pods-SwiftyOnboardExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyOnboardExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyOnboardExample/Pods-SwiftyOnboardExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,7 +87,6 @@
 				693642101E89AEF7008808C2 /* AppDelegate.swift */,
 				693642141E89AEF7008808C2 /* Main.storyboard */,
 				6949C60A1E8A3D4F0025E084 /* Without Storyboards */,
-				6949C6091E8A3D360025E084 /* With Storyboards */,
 				693642171E89AEF7008808C2 /* Assets.xcassets */,
 				693642191E89AEF7008808C2 /* LaunchScreen.storyboard */,
 				6936421C1E89AEF7008808C2 /* Info.plist */,
@@ -114,18 +103,6 @@
 				693642281E89B7F6008808C2 /* Lato-Heavy.ttf */,
 			);
 			name = Fonts;
-			sourceTree = "<group>";
-		};
-		6949C6091E8A3D360025E084 /* With Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				693642341E89CE6C008808C2 /* StoryboardExample.swift */,
-				6949C6031E89F63D0025E084 /* CustomPage.xib */,
-				693642301E89C708008808C2 /* CustomPage.swift */,
-				6949C6071E8A39CB0025E084 /* CustomOverlay.xib */,
-				6949C6051E8A36530025E084 /* CustomOverlay.swift */,
-			);
-			name = "With Storyboards";
 			sourceTree = "<group>";
 		};
 		6949C60A1E8A3D4F0025E084 /* Without Storyboards */ = {
@@ -201,12 +178,10 @@
 			files = (
 				6936422B1E89B7F6008808C2 /* Lato-Heavy.ttf in Resources */,
 				6936421B1E89AEF7008808C2 /* LaunchScreen.storyboard in Resources */,
-				6949C6041E89F63D0025E084 /* CustomPage.xib in Resources */,
 				693642181E89AEF7008808C2 /* Assets.xcassets in Resources */,
 				6936422A1E89B7F6008808C2 /* Lato-Regular.ttf in Resources */,
 				693642161E89AEF7008808C2 /* Main.storyboard in Resources */,
 				693642291E89B7F6008808C2 /* Lato-Bold.ttf in Resources */,
-				6949C6081E8A39CB0025E084 /* CustomOverlay.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,11 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6949C6061E8A36530025E084 /* CustomOverlay.swift in Sources */,
-				693642351E89CE6C008808C2 /* StoryboardExample.swift in Sources */,
 				693642131E89AEF7008808C2 /* ViewController.swift in Sources */,
 				693642111E89AEF7008808C2 /* AppDelegate.swift in Sources */,
-				693642311E89C708008808C2 /* CustomPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
