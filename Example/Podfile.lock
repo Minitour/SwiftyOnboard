@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftyOnboard:
-    :commit: c41b5dd0b576d25c10c0bf5bd55927355e96a7d6
+    :commit: 9d410b0ce503cf3101cdf1bb0071f8b68f9143b6
     :git: https://github.com/Minitour/SwiftyOnboard.git
 
 SPEC CHECKSUMS:

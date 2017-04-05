@@ -57,6 +57,7 @@ open class SwiftyOnboardOverlay: UIView {
         button.setTitle("Skip", for: .normal)
         button.contentHorizontalAlignment = .right
         button.addTarget(self, action: #selector(didClickSkip(sender:)), for: .touchUpInside)
+        button.isHidden = true
         return button
     }()
     

@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		02EAEEC3AC43CE63F4E3A1391CB7A460 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		10D5204CB6B1B157B0EF52557DB1C49A /* SwiftyOnboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2646EDC93F0E69795297138574F1DAA2 /* SwiftyOnboard-dummy.m */; };
 		1797E27583A1610248C7549F38365954 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		1A205967A1851E7643A24B1B836F0762 /* SwiftyOnboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192134DF2ED60CEB408BA5B8A022A82 /* SwiftyOnboardOverlay.swift */; };
 		1FB22359DA67AE3E453F5235EF7F2955 /* Pods-SwiftyOnboardExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D80372DE4E1CD134036A452A18291F8 /* Pods-SwiftyOnboardExample-dummy.m */; };
 		537EA667D25DA3F4319712CB5734630F /* Pods-SwiftyOnboardExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 39D078963A3D5AB5C96292FA9C4D01A8 /* Pods-SwiftyOnboardExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5DDF8D17B8EAB4FEFF11393F7E9B67DF /* SwiftyOnboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4BA9FBEA2EA37C4D78C13B7C4CE3F1 /* SwiftyOnboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		83F66BCEAC1F5C953265B89BA409AF8A /* SwiftyOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257082FB7ACE788C5C10F88EA62D7473 /* SwiftyOnboard.swift */; };
-		9DBEE4C8ED0B2A4E18199FED87B16456 /* SwiftyOnboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 311B10A7866D4A45992B1B3CE72DB472 /* SwiftyOnboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2682A4DA85C4D74F57D1D92B1234F69 /* SwiftyOnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF5445AC98B9281931D326C07A359D7 /* SwiftyOnboardPage.swift */; };
+		5DDF8D17B8EAB4FEFF11393F7E9B67DF /* SwiftyOnboard-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C85EAD45091A73CD352544FA0E2C171 /* SwiftyOnboard-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7796AEE368875E73222CFD895146F08F /* SwiftyOnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3907616D9A43E13DF98FC33D169CCAE5 /* SwiftyOnboardPage.swift */; };
+		9DBEE4C8ED0B2A4E18199FED87B16456 /* SwiftyOnboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 804CB801D84D3A183938595BCD5FF9C3 /* SwiftyOnboard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9EF89C828672E2425CF1436E4EBDB80 /* SwiftyOnboard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 510C6DD78A8E4713E74B82FF0121500A /* SwiftyOnboard-dummy.m */; };
+		CC2E0A87C38426C7EAC05993039A0245 /* SwiftyOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADF89280BD5A8F3420A80BFE05FACB1 /* SwiftyOnboard.swift */; };
+		DBE447ED56AE809D6F1D7C6B31B34FBD /* SwiftyOnboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F641ECDAB620E0146C36F8B02B78AB3A /* SwiftyOnboardOverlay.swift */; };
+		F021F08032D2D6F3D78EDD764DBF8845 /* OnBoardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80713F8245FD554C19216C38920FB22 /* OnBoardingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,29 +31,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		027A9C2B7FDECF2D39FDD315A0AA1A80 /* SwiftyOnboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyOnboard-prefix.pch"; sourceTree = "<group>"; };
 		041BA9724DD03D40D3EAE24EA888FE44 /* Pods_SwiftyOnboardExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftyOnboardExample.framework; path = "Pods-SwiftyOnboardExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A546B71309547FC9531853DD6C90FB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		257082FB7ACE788C5C10F88EA62D7473 /* SwiftyOnboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboard.swift; path = SwiftyOnboard/SwiftyOnboard.swift; sourceTree = "<group>"; };
-		2646EDC93F0E69795297138574F1DAA2 /* SwiftyOnboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyOnboard-dummy.m"; sourceTree = "<group>"; };
-		311B10A7866D4A45992B1B3CE72DB472 /* SwiftyOnboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyOnboard.h; path = SwiftyOnboard/SwiftyOnboard.h; sourceTree = "<group>"; };
-		3776ADD027027673CD313827904C86FF /* SwiftyOnboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyOnboard.xcconfig; sourceTree = "<group>"; };
+		1E9F0C68918FE9398D7772169502F349 /* SwiftyOnboard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyOnboard.xcconfig; sourceTree = "<group>"; };
+		3907616D9A43E13DF98FC33D169CCAE5 /* SwiftyOnboardPage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboardPage.swift; path = SwiftyOnboard/SwiftyOnboardPage.swift; sourceTree = "<group>"; };
 		39D078963A3D5AB5C96292FA9C4D01A8 /* Pods-SwiftyOnboardExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftyOnboardExample-umbrella.h"; sourceTree = "<group>"; };
 		3EE2181D6FAE8A39AD5CE4CA02EA786C /* SwiftyOnboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyOnboard.framework; path = SwiftyOnboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4145D6030CA6C970B3E7067327E66D3B /* Pods-SwiftyOnboardExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftyOnboardExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		510C6DD78A8E4713E74B82FF0121500A /* SwiftyOnboard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyOnboard-dummy.m"; sourceTree = "<group>"; };
+		6ADF89280BD5A8F3420A80BFE05FACB1 /* SwiftyOnboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboard.swift; path = SwiftyOnboard/SwiftyOnboard.swift; sourceTree = "<group>"; };
+		6C85EAD45091A73CD352544FA0E2C171 /* SwiftyOnboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyOnboard-umbrella.h"; sourceTree = "<group>"; };
 		7C0E99A1E061D2EF23EB3BB57ACF3E9C /* Pods-SwiftyOnboardExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftyOnboardExample.modulemap"; sourceTree = "<group>"; };
-		8B964359D7C61E466DFA1759C8A6D396 /* SwiftyOnboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyOnboard-prefix.pch"; sourceTree = "<group>"; };
+		804CB801D84D3A183938595BCD5FF9C3 /* SwiftyOnboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyOnboard.h; path = SwiftyOnboard/SwiftyOnboard.h; sourceTree = "<group>"; };
 		8D80372DE4E1CD134036A452A18291F8 /* Pods-SwiftyOnboardExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftyOnboardExample-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9B766159C1DC2C9058FDD96E111403AF /* Pods-SwiftyOnboardExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyOnboardExample-resources.sh"; sourceTree = "<group>"; };
 		A6485FA8FD6DB57BFC1AC7DEE0D14735 /* Pods-SwiftyOnboardExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyOnboardExample.debug.xcconfig"; sourceTree = "<group>"; };
-		B2D4AAA612910C47AB19B40AFF4FF05C /* SwiftyOnboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyOnboard.modulemap; sourceTree = "<group>"; };
-		C192134DF2ED60CEB408BA5B8A022A82 /* SwiftyOnboardOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboardOverlay.swift; path = SwiftyOnboard/SwiftyOnboardOverlay.swift; sourceTree = "<group>"; };
+		C80713F8245FD554C19216C38920FB22 /* OnBoardingController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnBoardingController.swift; path = SwiftyOnboard/OnBoardingController.swift; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D5915ED8E27D44A5326FAC5D1816BB94 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE4BA9FBEA2EA37C4D78C13B7C4CE3F1 /* SwiftyOnboard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyOnboard-umbrella.h"; sourceTree = "<group>"; };
+		DDB07936C2EEB8981C8A94C4E25BEE97 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F5B33BEE9084D0EB0FB1233C19C4FD /* Pods-SwiftyOnboardExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftyOnboardExample-acknowledgements.plist"; sourceTree = "<group>"; };
-		EEF5445AC98B9281931D326C07A359D7 /* SwiftyOnboardPage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboardPage.swift; path = SwiftyOnboard/SwiftyOnboardPage.swift; sourceTree = "<group>"; };
+		E3AAB3E5232E442184484D9BA9D89DB9 /* SwiftyOnboard.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyOnboard.modulemap; sourceTree = "<group>"; };
 		F536DDF293DC8D5DB6AD68C2E344A61F /* Pods-SwiftyOnboardExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftyOnboardExample-frameworks.sh"; sourceTree = "<group>"; };
+		F641ECDAB620E0146C36F8B02B78AB3A /* SwiftyOnboardOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyOnboardOverlay.swift; path = SwiftyOnboard/SwiftyOnboardOverlay.swift; sourceTree = "<group>"; };
 		FAAC7C4F9FD4A481C5D16553E5BB61F3 /* Pods-SwiftyOnboardExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftyOnboardExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,12 +78,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F41084FD05BFDEEB32F1F5FAA95F464 /* Pods */ = {
+		4D00AFD244F31ABDDE4D34E1E6DBB9A7 /* SwiftyOnboard */ = {
 			isa = PBXGroup;
 			children = (
-				B1DBA2B74C67EC478BC9533D6C2523D4 /* SwiftyOnboard */,
+				C80713F8245FD554C19216C38920FB22 /* OnBoardingController.swift */,
+				804CB801D84D3A183938595BCD5FF9C3 /* SwiftyOnboard.h */,
+				6ADF89280BD5A8F3420A80BFE05FACB1 /* SwiftyOnboard.swift */,
+				F641ECDAB620E0146C36F8B02B78AB3A /* SwiftyOnboardOverlay.swift */,
+				3907616D9A43E13DF98FC33D169CCAE5 /* SwiftyOnboardPage.swift */,
+				D99C4C90296C55A008EEF04891796488 /* Support Files */,
 			);
-			name = Pods;
+			name = SwiftyOnboard;
+			path = SwiftyOnboard;
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -97,7 +105,7 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				3F41084FD05BFDEEB32F1F5FAA95F464 /* Pods */,
+				B2D9CFD0587831B463552C8BD2B37049 /* Pods */,
 				F15DB54A9FBBA91D6C81E1C433FEA6B3 /* Products */,
 				9CFE3652B7792CCAE66C3DD8AFA46D49 /* Targets Support Files */,
 			);
@@ -111,31 +119,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		A0B4AD658C4E3867836556530B952D60 /* Support Files */ = {
+		B2D9CFD0587831B463552C8BD2B37049 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0A546B71309547FC9531853DD6C90FB4 /* Info.plist */,
-				B2D4AAA612910C47AB19B40AFF4FF05C /* SwiftyOnboard.modulemap */,
-				3776ADD027027673CD313827904C86FF /* SwiftyOnboard.xcconfig */,
-				2646EDC93F0E69795297138574F1DAA2 /* SwiftyOnboard-dummy.m */,
-				8B964359D7C61E466DFA1759C8A6D396 /* SwiftyOnboard-prefix.pch */,
-				DE4BA9FBEA2EA37C4D78C13B7C4CE3F1 /* SwiftyOnboard-umbrella.h */,
+				4D00AFD244F31ABDDE4D34E1E6DBB9A7 /* SwiftyOnboard */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyOnboard";
-			sourceTree = "<group>";
-		};
-		B1DBA2B74C67EC478BC9533D6C2523D4 /* SwiftyOnboard */ = {
-			isa = PBXGroup;
-			children = (
-				311B10A7866D4A45992B1B3CE72DB472 /* SwiftyOnboard.h */,
-				257082FB7ACE788C5C10F88EA62D7473 /* SwiftyOnboard.swift */,
-				C192134DF2ED60CEB408BA5B8A022A82 /* SwiftyOnboardOverlay.swift */,
-				EEF5445AC98B9281931D326C07A359D7 /* SwiftyOnboardPage.swift */,
-				A0B4AD658C4E3867836556530B952D60 /* Support Files */,
-			);
-			name = SwiftyOnboard;
-			path = SwiftyOnboard;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -144,6 +133,20 @@
 				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D99C4C90296C55A008EEF04891796488 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDB07936C2EEB8981C8A94C4E25BEE97 /* Info.plist */,
+				E3AAB3E5232E442184484D9BA9D89DB9 /* SwiftyOnboard.modulemap */,
+				1E9F0C68918FE9398D7772169502F349 /* SwiftyOnboard.xcconfig */,
+				510C6DD78A8E4713E74B82FF0121500A /* SwiftyOnboard-dummy.m */,
+				027A9C2B7FDECF2D39FDD315A0AA1A80 /* SwiftyOnboard-prefix.pch */,
+				6C85EAD45091A73CD352544FA0E2C171 /* SwiftyOnboard-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyOnboard";
 			sourceTree = "<group>";
 		};
 		F15DB54A9FBBA91D6C81E1C433FEA6B3 /* Products */ = {
@@ -200,7 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FA52E8244D068BB419FAD757462889D /* Build configuration list for PBXNativeTarget "SwiftyOnboard" */;
 			buildPhases = (
-				40DDA301EF0490CBC0626791E65FF4E5 /* Sources */,
+				AD2D9DAB19E8F41A62271C55C1168A6A /* Sources */,
 				00837F042363A56C31EE9F7BB38C39BD /* Frameworks */,
 				4197382F3910DDF012A1069663D2BAE3 /* Headers */,
 			);
@@ -267,14 +270,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40DDA301EF0490CBC0626791E65FF4E5 /* Sources */ = {
+		AD2D9DAB19E8F41A62271C55C1168A6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10D5204CB6B1B157B0EF52557DB1C49A /* SwiftyOnboard-dummy.m in Sources */,
-				83F66BCEAC1F5C953265B89BA409AF8A /* SwiftyOnboard.swift in Sources */,
-				1A205967A1851E7643A24B1B836F0762 /* SwiftyOnboardOverlay.swift in Sources */,
-				F2682A4DA85C4D74F57D1D92B1234F69 /* SwiftyOnboardPage.swift in Sources */,
+				F021F08032D2D6F3D78EDD764DBF8845 /* OnBoardingController.swift in Sources */,
+				C9EF89C828672E2425CF1436E4EBDB80 /* SwiftyOnboard-dummy.m in Sources */,
+				CC2E0A87C38426C7EAC05993039A0245 /* SwiftyOnboard.swift in Sources */,
+				DBE447ED56AE809D6F1D7C6B31B34FBD /* SwiftyOnboardOverlay.swift in Sources */,
+				7796AEE368875E73222CFD895146F08F /* SwiftyOnboardPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +407,7 @@
 		};
 		73FC8C449742ED120BBDB1F4DB144E30 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3776ADD027027673CD313827904C86FF /* SwiftyOnboard.xcconfig */;
+			baseConfigurationReference = 1E9F0C68918FE9398D7772169502F349 /* SwiftyOnboard.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -435,7 +439,7 @@
 		};
 		B637D5C1F0D479A2FD8BE0C8B48D27DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3776ADD027027673CD313827904C86FF /* SwiftyOnboard.xcconfig */;
+			baseConfigurationReference = 1E9F0C68918FE9398D7772169502F349 /* SwiftyOnboard.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
