@@ -13,6 +13,7 @@
 		69A62A181E885760009788A2 /* SwiftyOnboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A62A151E885760009788A2 /* SwiftyOnboardOverlay.swift */; };
 		69A62A191E885760009788A2 /* SwiftyOnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A62A161E885760009788A2 /* SwiftyOnboardPage.swift */; };
 		69A62A1A1E885760009788A2 /* SwiftyOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A62A171E885760009788A2 /* SwiftyOnboard.swift */; };
+		9DF2250A1E94741300A2EFB7 /* OnBoardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF225091E94741300A2EFB7 /* OnBoardingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		69A62A151E885760009788A2 /* SwiftyOnboardOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardOverlay.swift; sourceTree = "<group>"; };
 		69A62A161E885760009788A2 /* SwiftyOnboardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardPage.swift; sourceTree = "<group>"; };
 		69A62A171E885760009788A2 /* SwiftyOnboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyOnboard.swift; sourceTree = "<group>"; };
+		9DF225091E94741300A2EFB7 /* OnBoardingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				69A62A151E885760009788A2 /* SwiftyOnboardOverlay.swift */,
 				69A62A161E885760009788A2 /* SwiftyOnboardPage.swift */,
 				69A62A171E885760009788A2 /* SwiftyOnboard.swift */,
+				9DF225091E94741300A2EFB7 /* OnBoardingController.swift */,
 				69A629FF1E885750009788A2 /* Info.plist */,
 			);
 			path = SwiftyOnboard;
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A62A1A1E885760009788A2 /* SwiftyOnboard.swift in Sources */,
+				9DF2250A1E94741300A2EFB7 /* OnBoardingController.swift in Sources */,
 				69A62A191E885760009788A2 /* SwiftyOnboardPage.swift in Sources */,
 				69A62A181E885760009788A2 /* SwiftyOnboardOverlay.swift in Sources */,
 			);

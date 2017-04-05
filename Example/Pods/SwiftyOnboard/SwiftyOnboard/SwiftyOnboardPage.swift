@@ -70,8 +70,6 @@ open class SwiftyOnboardPage: UIView {
         
         self.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        //imageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        //imageView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
         imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1.0).isActive = true
         imageView.topAnchor.constraint(equalTo: resizeableView.bottomAnchor).isActive = true
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

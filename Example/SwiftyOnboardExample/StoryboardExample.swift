@@ -13,6 +13,7 @@ class StoryboardExampleViewController: UIViewController {
 
     @IBOutlet weak var swiftyOnboard: SwiftyOnboard!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         swiftyOnboard.style = .light
@@ -47,12 +48,12 @@ extension StoryboardExampleViewController: SwiftyOnboardDelegate, SwiftyOnboardD
         return view
     }
     
-    func swiftyOnboardViewForOverlay(swiftyOnboard: SwiftyOnboard) -> SwiftyOnboardOverlay? {
+    func swiftyOnboardViewForOverlay(_ swiftyOnboard: SwiftyOnboard) -> SwiftyOnboardOverlay? {
         let overlay = CustomOverlay.instanceFromNib() as? CustomOverlay
         return overlay
     }
     
-    func swiftyOnboardOverlayForPosition(swiftyOnboard: SwiftyOnboard, overlay: SwiftyOnboardOverlay, for position: Double) {
+    func swiftyOnboardOverlayForPosition(_ swiftyOnboard: SwiftyOnboard, overlay: SwiftyOnboardOverlay, for position: Double) {
         let overlay = overlay as! CustomOverlay
         let currentPage = round(position)
         overlay.pageControl.currentPage = Int(currentPage)

@@ -87,6 +87,5 @@ open class SwiftyOnboardPage: UIView {
         subTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
         subTitle.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
         subTitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 0).isActive = true
-        //subTitle.heightAnchor.constraint(equalTo: title.heightAnchor).isActive = true
     }
 }

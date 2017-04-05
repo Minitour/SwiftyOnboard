@@ -108,9 +108,6 @@ open class SwiftyOnboardOverlay: UIView {
         continueButton.layer.cornerRadius = height/2
         continueButton.layer.borderColor = UIColor.white.cgColor
         continueButton.layer.borderWidth = 2
-//        signInButton.layer.cornerRadius = height/2
-//        signInButton.layer.borderColor = UIColor.white.cgColor
-//        signInButton.layer.borderWidth = 2
     }
     
     

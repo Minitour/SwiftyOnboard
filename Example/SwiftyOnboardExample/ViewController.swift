@@ -13,32 +13,18 @@ class ViewController: UIViewController {
     
     var swiftyOnboard: SwiftyOnboard!
     
-    var gradiant: CAGradientLayer = {
-        //Gradiant for the background view
-        let blue = UIColor(red: 69/255, green: 127/255, blue: 202/255, alpha: 1.0).cgColor
-        let purple = UIColor(red: 166/255, green: 172/255, blue: 236/255, alpha: 1.0).cgColor
-        let gradiant = CAGradientLayer()
-        gradiant.colors = [purple, blue]
-        gradiant.startPoint = CGPoint(x: 0.5, y: 0.18)
-        return gradiant
-    }()
+    var titles: [String] = ["A marketplace of art","Everything goes","A better way to communicate"]
+    var subtitles: [String] = ["Create, share & buy content","We support all types of media","Use your download content on IM apps"]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        gradient()
-        UIApplication.shared.statusBarStyle = .lightContent
-        
-        swiftyOnboard = SwiftyOnboard(frame: view.frame, style: .light)
-        view.addSubview(swiftyOnboard)
-        swiftyOnboard.dataSource = self
-        swiftyOnboard.delegate = self
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let onBoardingController = OnBoardingController()
+        onBoardingController.delegate = self
+        onBoardingController.dataSource = self
+        onBoardingController.make(in: self)
     }
     
-    func gradient() {
-        //Add the gradiant to the view:
-        self.gradiant.frame = view.bounds
-        view.layer.addSublayer(gradiant)
-    }
+    
     
     func handleSkip() {
         swiftyOnboard?.goToPage(index: 2, animated: true)
@@ -50,11 +36,11 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource {
-    
-    func swiftyOnboardNumberOfPages(_ swiftyOnboard: SwiftyOnboard) -> Int {
-        //Number of pages in the onboarding:
-        return 3
+extension ViewController: SwiftyOnboardDelegate {
+    func swiftyOnboard(_ swiftyOnboard: SwiftyOnboard, didClickContinue button: UIButton, atIndex index: Int,isLast: Bool) {
+        if !isLast {
+            swiftyOnboard.goToPage(index: index+1, animated: true)
+        }
     }
     
     func swiftyOnboardPageForIndex(_ swiftyOnboard: SwiftyOnboard, index: Int) -> SwiftyOnboardPage? {
@@ -66,52 +52,52 @@ extension ViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource {
         //Set the font and color for the labels:
         view.title.font = UIFont(name: "Lato-Heavy", size: 22)
         view.subTitle.font = UIFont(name: "Lato-Regular", size: 16)
-        
-        if index == 0 {
-            //On the first page, change the text in the labels to say the following:
-            view.title.text = "Welcome to Confess!"
-            view.subTitle.text = "Confess lets you anonymously\n send confessions to your friends\n and receive confessions from them."
-        } else if index == 1 {
-            //On the second page, change the text in the labels to say the following:
-            view.title.text = "It’s completely anonymous"
-            view.subTitle.text = "All confessions sent are\n anonymous. Your friends will only\n know that it came from one of\n their facebook friends."
-        } else {
-            //On the thrid page, change the text in the labels to say the following:
-            view.title.text = "Say something positive"
-            view.subTitle.text = "Be nice to your friends.\n Send them confessions that\n will make them smile :)"
-        }
+        view.title.text = titles[index]
+        view.subTitle.text = subtitles[index]
         
         //Return the page for the given index:
         return view
     }
     
-    func swiftyOnboardViewForOverlay(swiftyOnboard: SwiftyOnboard) -> SwiftyOnboardOverlay? {
+    func swiftyOnboardOverlayForPosition(_ swiftyOnboard: SwiftyOnboard, overlay: SwiftyOnboardOverlay, for position: Double) {
+        let currentPage = Int(round(position))
+        if currentPage < swiftyOnboard.pageCount - 1 {
+            overlay.continueButton.setTitle("CONTINUE", for: .normal)
+            overlay.skipButton.isHidden = true
+        } else {
+            overlay.continueButton.setTitle("REGISTER", for: .normal)
+            overlay.skipButton.isHidden = false
+        }
+    }
+}
+
+extension ViewController: SwiftyOnboardDataSource{
+    
+    func swiftyOnboardNumberOfPages(_ swiftyOnboard: SwiftyOnboard) -> Int {
+        //Number of pages in the onboarding:
+        return 3
+    }
+    
+    func swiftyOnboardBackgroundColorFor(_ swiftyOnboard: SwiftyOnboard, atIndex index: Int) -> UIColor? {
+        let colors:[UIColor] = [#colorLiteral(red: 0.9980840087, green: 0.3723873496, blue: 0.4952875376, alpha: 1),#colorLiteral(red: 0.2666860223, green: 0.5116362572, blue: 1, alpha: 1),#colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)]
+        return colors[index]
+    }
+    
+    func swiftyOnboardViewForOverlay(_ swiftyOnboard: SwiftyOnboard) -> SwiftyOnboardOverlay? {
         let overlay = SwiftyOnboardOverlay()
         
         //Setup targets for the buttons on the overlay view:
-        overlay.skipButton.addTarget(self, action: #selector(handleSkip), for: .touchUpInside)
-        overlay.continueButton.addTarget(self, action: #selector(handleContinue), for: .touchUpInside)
         overlay.continueButton.titleLabel?.font = UIFont(name: "Lato-Bold", size: 16)
         overlay.continueButton.setTitleColor(UIColor.white, for: .normal)
         overlay.skipButton.setTitleColor(UIColor.white, for: .normal)
         overlay.skipButton.titleLabel?.font = UIFont(name: "Lato-Heavy", size: 16)
+        overlay.signInButton.setTitleColor(UIColor.white, for: .normal)
+        overlay.signInButton.titleLabel?.font = UIFont(name: "Lato-Heavy", size: 16)
+        overlay.logoView.image = #imageLiteral(resourceName: "space1")
+        overlay.skipButton.isHidden = true
         
         //Return the overlay view:
         return overlay
-    }
-    
-    func swiftyOnboardOverlayForPosition(swiftyOnboard: SwiftyOnboard, overlay: SwiftyOnboardOverlay, for position: Double) {
-        let currentPage = round(position)
-        overlay.continueButton.tag = Int(position)
-        
-        if currentPage == 0.0 || currentPage == 1.0 {
-            overlay.continueButton.setTitle("Continue", for: .normal)
-            overlay.skipButton.setTitle("Skip", for: .normal)
-            overlay.skipButton.isHidden = false
-        } else {
-            overlay.continueButton.setTitle("Get Started!", for: .normal)
-            overlay.skipButton.isHidden = true
-        }
     }
 }
 
