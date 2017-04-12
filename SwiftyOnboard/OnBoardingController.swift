@@ -29,9 +29,9 @@ public class OnBoardingController: UIViewController{
         swiftyOnboard.delegate = delegate
     }
     
-    open func make(in controller: UIViewController){
+    open func make(in controller: UIViewController,animated: Bool = true, completion: (()->Void)?=nil){
         modalPresentationCapturesStatusBarAppearance = true
-        controller.present(self, animated: true, completion: nil)
+        controller.present(self, animated: animated, completion: completion)
     }
     
     override public var prefersStatusBarHidden: Bool{
