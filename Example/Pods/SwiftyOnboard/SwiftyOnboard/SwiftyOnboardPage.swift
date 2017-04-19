@@ -66,14 +66,14 @@ open class SwiftyOnboardPage: UIView {
         resizeableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         resizeableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         resizeableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        resizeableView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.18).isActive = true
+        resizeableView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.14).isActive = true
         
         self.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1.0).isActive = true
+        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1.0).isActive = true
         imageView.topAnchor.constraint(equalTo: resizeableView.bottomAnchor).isActive = true
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.4).isActive = true
+        imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.7).isActive = true
         
         self.addSubview(title)
         title.translatesAutoresizingMaskIntoConstraints = false
