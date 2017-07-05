@@ -18,10 +18,10 @@ public protocol SwiftyOnboardOverlayDelegate{
 }
 
 open class SwiftyOnboardOverlay: UIView {
-
+    
     public var delegate: SwiftyOnboardOverlayDelegate?
     
-
+    
     public var logoView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
@@ -113,11 +113,21 @@ open class SwiftyOnboardOverlay: UIView {
     
     
     func setUp() {
-        addSubview(logoView)
+        
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        addSubview(headerView)
+        
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        headerView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        headerView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        headerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.14).isActive = true
+        
+        headerView.addSubview(logoView)
         logoView.translatesAutoresizingMaskIntoConstraints = false
-        logoView.topAnchor.constraint(equalTo: topAnchor, constant: 40).isActive = true
-        logoView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        logoView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        logoView.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
+        logoView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor).isActive = true
         logoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.05).isActive = true
         
         let resizableView = UIView()

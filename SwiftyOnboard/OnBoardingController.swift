@@ -29,7 +29,7 @@ public class OnBoardingController: UIViewController{
         swiftyOnboard.delegate = delegate
     }
     
-    open func make(in controller: UIViewController,animated: Bool = true, completion: (()->Void)?=nil){
+    open func make(in controller: UIViewController,animated: Bool = true, completion: (()->Void)? = nil){
         modalPresentationCapturesStatusBarAppearance = true
         controller.present(self, animated: animated, completion: completion)
     }
